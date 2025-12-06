@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AASA – Autism Awareness & Support Alliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body
+  data-mode="nt"
+  data-accessibility="off"
+  data-flow="off"
+>
+  <!-- Sensory overlays -->
+  <div id="sensoryLayer" class="sensory-layer"></div>
+  <div id="focusMask" class="focus-mask"></div>
+
+  <!-- Audio layers -->
+  <audio id="audioHum" src="audio/hum.mp3" loop></audio>
+  <audio id="audioChatter" src="audio/chatter.mp3" loop></audio>
+  <audio id="audioHigh" src="audio/high.mp3" loop></audio>
+  <audio id="audioLofi" src="audio/lofi.mp3" loop></audio>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-shell">
+      <div class="nav-left">
+        <div class="nav-logo-mark">A</div>
+        <div class="nav-text">
+          <div class="nav-logo">Autism Awareness &amp; Support Alliance</div>
+          <div class="nav-subtitle">AASA · Interactive Empathy Experience</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero" data-scroll>Home</a>
+        <a href="#stats" data-scroll>Stats</a>
+        <a href="#experience" data-scroll>Hyperfocus</a>
+        <a href="#simulations" data-scroll data-role="contact">Simulations</a>
+        <a href="#learn" data-scroll data-role="about">Learn</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="modeToggle" class="pill-toggle">
+          Sensory Filter: <span data-mode-label>Neurotypical</span>
+        </button>
+        <button id="accessToggle" class="pill-toggle pill-access">
+          Accessibility mode
+        </button>
+      </div>
+    </div>
+
+    <!-- social battery -->
+    <div class="battery-shell">
+      <span class="battery-label">Social battery</span>
+      <div class="battery-bar">
+        <div class="battery-level" id="batteryLevel"></div>
+      </div>
+      <span class="battery-value" id="batteryValue">100%</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="hero-center garble-target">
+        <div class="hero-logo">
+          <div class="hero-logo-mark">A</div>
+        </div>
+        <h1 class="hero-title">
+          Autism Awareness &amp;<br />
+          Support Alliance
+        </h1>
+        <p class="hero-hook">
+          Turn on the Sensory Filter to feel how visual noise, audio overload,
+          social battery drain, and invisible rules can make simple tasks
+          exhausting — then use Accessibility mode to see how much easier it
+          could be.
+        </p>
+        <div class="hero-actions">
+          <button
+            class="btn btn-primary"
+            id="startExperienceBtn"
+            data-scroll="#stats"
+          >
+            Start experience
+          </button>
+          <button class="btn btn-ghost" data-scroll="#learn">
+            Skip to learning
+          </button>
+        </div>
+        <div class="hero-scroll-hint" data-scroll="#stats">
+          <span class="hint-text">Scroll to begin</span>
+          <span class="hint-arrow">﹀</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="section section-light">
+      <div class="section-shell">
+        <div class="section-header garble-target">
+          <p class="eyebrow">Step 1 · See the scale</p>
+          <h2 class="section-title">
+            Millions of autistic people, <span>all over the world</span>.
+          </h2>
+          <p class="section-copy">
+            Autism is common and global. Estimates vary, but many experts suggest
+            that roughly 1–2% of people are autistic. That’s tens of millions of
+            individuals with their own experiences, needs, and strengths.
+          </p>
+        </div>
+
+        <div class="stats-layout">
+          <div class="stat-hero-card garble-target">
+            <p class="stat-hero-label">Estimated autistic people worldwide</p>
+            <p class="stat-hero-value" data-global-stat-target="75">0M+</p>
+            <p class="stat-hero-body">
+              This is a rough, illustrative number (around seventy-five million).
+              The exact figure depends on access to diagnosis and how autism is
+              defined, but the key point is simple: autism is not rare.
+            </p>
+          </div>
+
+          <div class="world-card garble-target">
+            <div class="world-header">
+              <p class="world-title">Global distribution (illustrative)</p>
+              <p class="world-subtitle">
+                Dots fade in to suggest that autistic people live in every part
+                of the world.
+              </p>
+            </div>
+            <div class="world-map">
+              <div class="world-layer world-contours"></div>
+              <div class="world-layer world-dots" id="worldDots"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HYPERFOCUS EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-shell">
+        <div class="section-header garble-target">
+          <p class="eyebrow">Step 2 · Hyperfocus</p>
+          <h2 class="section-title">
+            Feel a <span>flow state</span> — and how fragile it is.
+          </h2>
+          <p class="section-copy">
+            This pattern game acts as a “hyperfocus zone.” If you get several
+            rounds in a row correct, the noise cuts out and the site shifts into
+            a calm flow state. If you break focus or navigate away, it snaps back.
+          </p>
+        </div>
+
+        <div class="hyper-shell">
+          <div class="hyper-info garble-target">
+            <h3 class="card-title">How it works</h3>
+            <p class="card-body">
+              Click the circles in order from smallest to largest. Get 5 rounds
+              in a row correct to enter a Hyperfocus Flow State:
+            </p>
+            <ul class="bullet-list">
+              <li>Visual noise and blur turn off.</li>
+              <li>A calm Lo-Fi track fades in.</li>
+              <li>The site feels fast, precise, and predictable.</li>
+            </ul>
+            <p class="card-body">
+              Click a wrong circle or leave the section, and the site snaps back:
+              the noise returns, blur comes back, and the flow is broken.
+            </p>
+          </div>
+
+          <div class="hyper-card">
+            <h3 class="card-title garble-target">
+              Hyperfocus · Size-order game
+            </h3>
+            <p class="card-body garble-target">
+              Each round, four circles appear. Click them from smallest to
+              largest. Try to build a streak.
+            </p>
+
+            <div class="size-grid" id="sizeGrid">
+              <!-- circles injected by JS -->
+            </div>
+
+            <p class="hyper-status" id="hyperStatus">
+              Press “Start pattern” to begin.
+            </p>
+
+            <button id="hyperStart" class="btn btn-primary btn-small">
+              Start pattern
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULATIONS -->
+    <section id="simulations" class="section section-light">
+      <div class="section-shell">
+        <div class="section-header garble-target">
+          <p class="eyebrow">Step 3 · Everyday tasks under load</p>
+          <h2 class="section-title">
+            Simple tasks become <span>hard</span> when the environment fights you.
+          </h2>
+          <p class="section-copy">
+            These examples use normal content — math, instructions, choosing
+            lunch, filling a form, asking for help — and add sensory and social
+            friction on top.
+          </p>
+        </div>
+
+        <div class="sim-grid">
+          <!-- Math -->
+          <article class="sim-card garble-target">
+            <h3 class="card-title">1. “Impossible” math problem</h3>
+            <p class="card-body">
+              The math is elementary, but the numbers drift and a ticking sound
+              speeds up as you try to read.
+            </p>
+            <p class="math-text" id="mathProblem">
+              A train departs Station A at
+              <span class="math-num">8:00 AM</span> traveling at
+              <span class="math-num">60 mph</span>. Another train departs
+              Station B at <span class="math-num">9:00 AM</span> traveling at
+              <span class="math-num">75 mph</span>. If the stations are
+              <span class="math-num">300 miles</span> apart, at what time will
+              they pass each other?
+            </p>
+          </article>
+
+          <!-- Reading -->
+          <article class="sim-card garble-target">
+            <h3 class="card-title">2. Instruction paragraph “flashlight”</h3>
+            <p class="card-body">
+              Only the area under your mouse is clear. The spacing creates
+              distracting “rivers” down the text.
+            </p>
+            <p class="reading-text" id="readingPassage">
+              To assemble the device, insert the flange into the aperture. Ensure
+              the bevel is facing upwards. Do not over-torque the primary screw,
+              or the casing may shear. Once aligned, rotate the mechanism
+              counter-clockwise until you feel a distinct click.
+            </p>
+          </article>
+
+          <!-- Executive function form -->
+          <article class="sim-card garble-target">
+            <h3 class="card-title">3. Executive function form</h3>
+            <p class="card-body">
+              The labels are vague, the cursor jumps around, and errors are
+              unhelpful. It’s not “laziness” — it’s friction.
+            </p>
+            <form id="execForm" class="exec-form" autocomplete="off">
+              <label class="exec-field">
+                <span class="exec-label" data-standard-label="First name">
+                  Data Point A
+                </span>
+                <input type="text" id="fieldA" />
+              </label>
+              <label class="exec-field">
+                <span class="exec-label" data-standard-label="Email">
+                  Data Point B
+                </span>
+                <input type="text" id="fieldB" placeholder="Enter formatted string" />
+              </label>
+              <label class="exec-field">
+                <span class="exec-label" data-standard-label="Message">
+                  Data Point C
+                </span>
+                <textarea id="fieldC" rows="3" placeholder="Enter formatted string"></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary btn-small">
+                Submit
+              </button>
+              <p class="exec-error" id="execError"></p>
+            </form>
+          </article>
+
+          <!-- Lunch menu -->
+          <article class="sim-card garble-target">
+            <h3 class="card-title">4. Lunch by sensory texture</h3>
+            <p class="card-body">
+              Pick a meal in under 10 seconds. In Sensory Filter mode, cafeteria
+              noise plays in the background.
+            </p>
+            <ul class="menu-list" id="lunchMenu">
+              <li data-menu-option>
+                Option A: “Crunchy, dry shards with salty dust.”
+              </li>
+              <li data-menu-option>
+                Option B: “Slimy, cold strings in wet sauce.”
+              </li>
+              <li data-menu-option>
+                Option C: “Unpredictable texture mix.”
+              </li>
+            </ul>
+            <p class="menu-timer" id="menuTimer">Time left: —</p>
+            <p class="menu-status" id="menuStatus"></p>
+          </article>
+
+          <!-- Literal Interpreter Chatbot -->
+          <article class="sim-card sim-chat garble-target">
+            <h3 class="card-title">5. Literal Interpreter chatbot</h3>
+            <p class="card-body">
+              Try to get a link. The bot answers literally and only helps if you
+              give an exact command.
+            </p>
+            <div class="chat-window">
+              <div class="chat-messages" id="chatMessages"></div>
+              <form id="chatForm" class="chat-input-row">
+                <input
+                  id="chatInput"
+                  type="text"
+                  placeholder="Example: 'Send me the link.'"
+                  autocomplete="off"
+                />
+                <button type="submit" class="btn btn-primary btn-small">
+                  Send
+                </button>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIET ROOM -->
+    <section id="quiet-room" class="section quiet-room">
+      <div class="quiet-inner garble-target">
+        <h2 class="quiet-title">Quiet Room</h2>
+        <p class="quiet-text">
+          A low-stimulus space. Soft colors, fewer elements, no pop-ups. While
+          you stay here without interacting, your social battery steadily
+          recharges.
+        </p>
+        <p class="quiet-text">
+          In real life, breaks, alone time, and quiet rooms are not “avoiding”
+          life — they are what make it possible to keep going.
+        </p>
+      </div>
+    </section>
+
+    <!-- LEARN / CURB-CUT -->
+    <section id="learn" class="section section-light">
+      <div class="section-shell">
+        <div class="section-header garble-target">
+          <p class="eyebrow">Step 4 · Curb-cut reality</p>
+          <h2 class="section-title">
+            Accessibility is not just for autistic people — it’s for <span>everyone</span>.
+          </h2>
+          <p class="section-copy">
+            When you switch on Accessibility mode, timers stop, noise stops, the
+            form labels become clear, and reading gets easier. That’s the curb-cut
+            effect: what helps disabled people tends to help almost everyone.
+          </p>
+        </div>
+
+        <div class="learn-grid">
+          <div class="card garble-target">
+            <h3 class="card-title">Listen first</h3>
+            <p class="card-body">
+              Autistic people are the experts on autistic experience. Believing
+              them is more effective than any simulator.
+            </p>
+          </div>
+          <div class="card garble-target">
+            <h3 class="card-title">Change the environment</h3>
+            <p class="card-body">
+              Instead of forcing people to “mask,” adjust noise, lighting,
+              timing, and communication style.
+            </p>
+          </div>
+          <div class="card garble-target">
+            <h3 class="card-title">Lower the cognitive load</h3>
+            <p class="card-body">
+              Clear labels, predictable flows, and quiet spaces don’t “spoil”
+              people — they let more people actually participate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sensory Filter settings panel -->
+  <div id="sensoryPanel" class="sensory-panel" aria-hidden="true">
+    <div class="sensory-panel-backdrop"></div>
+    <div class="sensory-panel-inner">
+      <h3 class="panel-title">Sensory Filter settings</h3>
+      <p class="panel-body">
+        The autistic experience simulation is active. Adjust the visual
+        intensity below, or turn the simulation off if it is too much.
+      </p>
+
+      <label class="panel-field">
+        <span>Visual distraction intensity</span>
+        <input
+          type="range"
+          id="noiseSlider"
+          min="0"
+          max="100"
+          value="60"
+        />
+      </label>
+
+      <p class="panel-caption">
+        Low intensity keeps text more readable. Higher intensity increases blur
+        around your focus and visual noise in the background.
+      </p>
+
+      <div class="panel-actions">
+        <button id="sensoryOff" class="btn btn-ghost btn-small">
+          Turn off simulation
+        </button>
+        <button id="sensoryClose" class="btn btn-primary btn-small">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <footer class="site-footer garble-target">
+    AASA – Autism Awareness &amp; Support Alliance · Interactive empathy demo.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
